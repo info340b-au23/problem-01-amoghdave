@@ -1,0 +1,58 @@
+ FAIL  problem-a/problem.spec.js
+  Used test-driven development
+    ✕ Used Jest to pre-test code, saved in `pretest.txt` (1 ms)
+  Source code is valid
+    ✕ HTML validates without errors (6 ms)
+    ✓ CSS validates without errors (101 ms)
+  Has required HTML
+    ✓ Specifies charset (1 ms)
+    ✓ Includes page title (1 ms)
+    ✓ Includes author metadata (1 ms)
+    ✓ Has a top-level heading
+    ✓ Has an image (1 ms)
+    ✓ Includes a paragraph
+    ✓ Includes a hyperlink in the paragraph (1 ms)
+    ✓ Includes a list
+    ✓ List has at least 3 items (1 ms)
+  Has required CSS
+    ✓ Links in local stylesheet (1 ms)
+    ✓ Body has default font size
+    ✓ Body has default font family (1 ms)
+    ✓ Paragraphs have specified line height
+    ✓ Images have constrained height
+    ✓ Important list item is colored
+
+  ● Used test-driven development › Used Jest to pre-test code, saved in `pretest.txt`
+
+    ENOENT: no such file or directory, open '/Users/amoghdave/Documents/INFO 340 Autumn/problem-01-amoghdave/problem-a/pretest.txt'
+
+      17 |   test('Used Jest to pre-test code, saved in `pretest.txt`', () => {
+      18 |     const path = __dirname + '/pretest.txt'
+    > 19 |     const pretest = fs.readFileSync(path, 'utf-8');
+         |                        ^
+      20 |     expect(pretest).toMatch(/FAIL +(problem-a)?\/problem\.spec\.js/)
+      21 |   })
+      22 | })
+
+      at Object.readFileSync (problem-a/problem.spec.js:19:24)
+
+  ● Source code is valid › HTML validates without errors
+
+    Error: 'html-valid-content-model' at line 3, column 5.
+    Error: 'attr-req-value' at line 12, column 16.
+
+      38 |     }
+      39 |
+    > 40 |     await expect(htmlPath).toHaveNoHtmlLintErrorsAsync(lintOpts);
+         |                            ^
+      41 |   })  
+      42 |
+      43 |   test('CSS validates without errors', async () => {
+
+      at Object.toHaveNoHtmlLintErrorsAsync (problem-a/problem.spec.js:40:28)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 16 passed, 18 total
+Snapshots:   0 total
+Time:        0.943 s, estimated 1 s
+Ran all test suites matching /problem-a/i.
